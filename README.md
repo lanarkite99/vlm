@@ -3,7 +3,7 @@
 Two-stage vision-language training project inspired by:
 `https://github.com/avbiswas/vlm/tree/main`
 
-![System Architecture](media/network_arch.png)
+![System Architecture](media/formal.png)
 
 
 ## Overview
