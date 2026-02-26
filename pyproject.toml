@@ -1,0 +1,22 @@
+[project]
+name = "vlm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "accelerate>=1.11.0",
+    "bert-score>=0.3.13",
+    "datasets>=4.5.0",
+    "evaluate>=0.4.6",
+    "matplotlib>=3.10.6",
+    "peft>=0.17.1",
+    "pillow>=12.1.1",
+    "rouge-score>=0.1.2",
+    "sacrebleu>=2.6.0",
+    "tensorboard>=2.20.0",
+    "torch>=2.9.1",
+    "torchvision>=0.24.1",
+    "tqdm>=4.67.3",
+    "transformers>=4.57.3",
+]
