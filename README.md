@@ -3,11 +3,8 @@
 Two-stage vision-language training project inspired by:
 `https://github.com/avbiswas/vlm/tree/main`
 
-![System Architecture](inference_results/network_arch.png)
+![System Architecture](media/network_arch.png)
 
-![Retrieval Similarity Grid](inference_results/similarity_grid.jpg)
-
-![VLM Outputs](inference_results/vlm_outputs.jpg)
 
 ## Overview
 
@@ -67,6 +64,8 @@ Results:
 
 ### Retrieval metrics (500 samples, val2017 subset)
 
+![Retrieval Similarity Grid](inference_results/similarity_grid.jpg)
+
 Source:
 - `inference_results/retrieval_val2017_500_metrics.json`
 - `inference_results/similarity_grid.jpg`
@@ -95,6 +94,7 @@ uv run -m vlm_train.lm_train --qformer-model-path models/trained_qformer_50k_uni
 ```powershell
 uv run -m vlm_train.basic_inf --image "dataset/coco_subsets/train2017_50k_images/<image>.jpg" --checkpoint-dir "models/from_pod/vlm_peft/best" --qformer-model-path "models/from_pod/trained_qformer_50k_unimodal_fresh/best"
 ```
+![VLM Outputs](inference_results/vlm_outputs.jpg)
 
 ### Batch caption inference + metrics (500)
 ```powershell
