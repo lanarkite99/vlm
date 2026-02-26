@@ -1,8 +1,5 @@
 # VLM (ViT + Q-Former + SmolLM LoRA)
 
-Two-stage vision-language training project inspired by:
-`https://github.com/avbiswas/vlm/tree/main`
-
 ![System Architecture](media/formal.png)
 
 
@@ -18,10 +15,13 @@ Pipeline:
 
 ## Data
 
-- Train subset manifest: `dataset/coco_subsets/train2017_50k.jsonl`
-- Train images: `dataset/coco_subsets/train2017_50k_images`
-- Eval subset manifest: `dataset/coco_subsets/val2017_1k.jsonl`
-- Eval images: `dataset/coco_subsets/val2017_1k_images`
+- Training/eval subsets were built locally from COCO `train2017` and `val2017`.
+- Local dataset paths used during runs:
+  - `dataset/coco_subsets/train2017_50k.jsonl`
+  - `dataset/coco_subsets/train2017_50k_images`
+  - `dataset/coco_subsets/val2017_1k.jsonl`
+  - `dataset/coco_subsets/val2017_1k_images`
+- `dataset/` is excluded from git by design.
 
 ## Training Summary
 
@@ -52,8 +52,8 @@ Final stage-2 artifact used:
 ### Caption metrics (500 samples, val2017 subset)
 
 Source:
-- `inference_results/val2017_500_preds.jsonl`
-- `inference_results/val2017_500_metrics.json`
+- Computed from a 500-sample local subset of COCO `val2017` with multiple references per image.
+- Committed artifact: `inference_results/val2017_500_metrics.json`
 
 Results:
 - BLEU: `22.4538`
@@ -67,8 +67,10 @@ Results:
 ![Retrieval Similarity Grid](inference_results/similarity_grid.jpg)
 
 Source:
-- `inference_results/retrieval_val2017_500_metrics.json`
-- `inference_results/similarity_grid.jpg`
+- Computed on the same 500-sample local COCO `val2017` subset.
+- Committed artifacts:
+  - `inference_results/retrieval_val2017_500_metrics.json`
+  - `inference_results/similarity_grid.jpg`
 
 Results:
 - I2T R@1: `0.3860`
@@ -106,4 +108,7 @@ uv run -m vlm_train.eval_captions --preds-jsonl "inference_results/val2017_500_p
 ### Retrieval eval (500)
 ```powershell
 uv run -m vlm_train.retrieval_eval --num-samples 500 --manifest-path "dataset/coco_subsets/val2017_1k.jsonl" --images-dir "dataset/coco_subsets/val2017_1k_images" --qformer-path "models/from_pod/trained_qformer_50k_unimodal_fresh/best" --out-json "inference_results/retrieval_val2017_500_metrics.json" --save-grid --grid-path "inference_results/similarity_grid.jpg"
+
 ```
+Two-stage vision-language training project inspired by:
+`https://github.com/avbiswas/vlm/tree/main`
