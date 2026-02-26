@@ -108,7 +108,8 @@ uv run -m vlm_train.eval_captions --preds-jsonl "inference_results/val2017_500_p
 ### Retrieval eval (500)
 ```powershell
 uv run -m vlm_train.retrieval_eval --num-samples 500 --manifest-path "dataset/coco_subsets/val2017_1k.jsonl" --images-dir "dataset/coco_subsets/val2017_1k_images" --qformer-path "models/from_pod/trained_qformer_50k_unimodal_fresh/best" --out-json "inference_results/retrieval_val2017_500_metrics.json" --save-grid --grid-path "inference_results/similarity_grid.jpg"
-
 ```
+
+## Reference
 Two-stage vision-language training project inspired by:
 `https://github.com/avbiswas/vlm/tree/main`
