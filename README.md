@@ -3,6 +3,12 @@
 Two-stage vision-language training project inspired by:
 `https://github.com/avbiswas/vlm/tree/main`
 
+![System Architecture](inference_results/network_arch.png)
+
+![Retrieval Similarity Grid](inference_results/similarity_grid.jpg)
+
+![VLM Outputs](inference_results/vlm_outputs.jpg)
+
 ## Overview
 
 Pipeline:

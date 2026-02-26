@@ -8,3 +8,24 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Data and model artifacts
+dataset/
+models/
+
+# Local logs/temp
+*.log
+*.err.log
+~$*.docx
+report.docx
+run_text.txt
+similarity_grid.jpg
+vlm_outputs.jpg
+
+# Keep only selected published inference assets/metrics
+inference_results/*
+!inference_results/network_arch.png
+!inference_results/similarity_grid.jpg
+!inference_results/vlm_outputs.jpg
+!inference_results/val2017_500_metrics.json
+!inference_results/retrieval_val2017_500_metrics.json

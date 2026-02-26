@@ -9,6 +9,7 @@ dependencies = [
     "bert-score>=0.3.13",
     "datasets>=4.5.0",
     "evaluate>=0.4.6",
+    "manim>=0.20.0",
     "matplotlib>=3.10.6",
     "peft>=0.17.1",
     "pillow>=12.1.1",
